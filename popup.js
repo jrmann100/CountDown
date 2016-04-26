@@ -35,8 +35,13 @@ function GetCount(){
                 out += secs +" seconds to dismissal";
                 document.getElementById('countbox').innerHTML=out;
 
-                setTimeout("GetCount()", 1000); //Chrome doesn't like this, but it's what does the auto-refresh. MUST FIX :(
+                // setTimeout(GetCount(), 1000); //Chrome doesn't like this, but it's what does the auto-refresh. MUST FIX :(
         }
 }
 
-window.onload=function(){GetCount();}//call when everything has loaded¸
+// window.onload=function(){GetCount();}//call when everything has loaded¸
+
+window.onload=function(){ //call when everything has loaded¸
+        GetCount(); // Call GetCount() once to initialize the display.
+        setInterval(GetCount, 1000); // Call GetCount() every second forever.
+}
