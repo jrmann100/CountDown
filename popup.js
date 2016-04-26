@@ -10,7 +10,7 @@ function GetCount(){
 
         // time is already past
         if(amount < 0){
-                document.getElementById('countbox').innerHTML="Now!";
+                document.getElementById('countbox').innerHTML="School's Out!";
         }
         // date is still good
         else{
