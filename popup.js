@@ -1,6 +1,7 @@
 dateNow = new Date()
 dateFuture = new Date(2016,(dateNow.getMonth()),(dateNow.getDate()),15,28,40);
 delete dateNow
+//function goFullscreen(){chrome.windows.update(WindowType, {type: 'app'})}
 function GetCount(){
 
         dateNow = new Date();                                                                        //grab current date
@@ -38,4 +39,4 @@ function GetCount(){
         }
 }
 
-window.onload=function(){GetCount();}//call when everything has loaded
+window.onload=function(){GetCount();}//call when everything has loaded¸
