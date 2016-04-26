@@ -1,0 +1,17 @@
+{
+  "name": "CountDown",
+  "description": "IDK what to write here…",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+     "16": "icon.png",
+     "48": "icon.png",
+     "128": "icon.png"
+  },
+  "version": "0.2",
+  "minimum_chrome_version": "20",
+  "manifest_version": 2,
+  "content_scripts": [ {"js": [ "popup.html" ], "matches": [ "http://*/" ]} ]
+}
