@@ -1,7 +1,7 @@
 dateNow = new Date()
 dateFuture = new Date(2016,(dateNow.getMonth()),(dateNow.getDate()),15,28,40);
 delete dateNow
-//function goFullscreen(){chrome.windows.update(WindowType, {type: 'app'})}
+//function goFullscreen(){chrome.windows.update(WindowType, {type: 'app'})} –Expand popup to fullscreen if possible…
 function GetCount(){
 
         dateNow = new Date();                                                                        //grab current date
@@ -35,7 +35,7 @@ function GetCount(){
                 out += secs +" seconds";
                 document.getElementById('countbox').innerHTML=out;
 
-                setTimeout("GetCount()", 1000);
+                setTimeout("GetCount()", 1000); //Chrome doesn't like this, but it's what does the auto-refresh. MUST FIX :(
         }
 }
 
