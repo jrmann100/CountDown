@@ -32,7 +32,7 @@ function GetCount(){
                 if(days != 0){out += days +" day"+((days!=1)?"s":"")+", ";}
                 if(days != 0 || hours != 0){out += hours +" hour"+((hours!=1)?"s":"")+", ";}
                 if(days != 0 || hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
-                out += secs +" seconds";
+                out += secs +" seconds to dismissal";
                 document.getElementById('countbox').innerHTML=out;
 
                 setTimeout("GetCount()", 1000); //Chrome doesn't like this, but it's what does the auto-refresh. MUST FIX :(
