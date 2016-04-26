@@ -10,8 +10,12 @@
      "48": "icon.png",
      "128": "icon.png"
   },
-  "version": "0.2",
+  "version": "0.3",
   "minimum_chrome_version": "20",
   "manifest_version": 2,
-  "content_scripts": [ {"js": [ "popup.html" ], "matches": [ "http://*/" ]} ]
+  "content_scripts": [ {"js": [ "popup.html" ], "matches": [ "http://*/" ]} ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
 }
