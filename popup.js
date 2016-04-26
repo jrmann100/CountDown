@@ -34,12 +34,9 @@ function GetCount(){
                 if(days != 0 || hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
                 out += secs +" seconds to dismissal";
                 document.getElementById('countbox').innerHTML=out;
-
-                // setTimeout(GetCount(), 1000); //Chrome doesn't like this, but it's what does the auto-refresh. MUST FIX :(
+                chrome.browserAction.setBadgeText({text: hours+":"+mins});
         }
 }
-
-// window.onload=function(){GetCount();}//call when everything has loaded¸
 
 window.onload=function(){ //call when everything has loaded¸
         GetCount(); // Call GetCount() once to initialize the display.
