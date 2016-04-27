@@ -15,7 +15,7 @@ function GetCount(){
         }
         // date is still good
         else{
-                days=0;hours=0;mins=0;secs=0;out="";
+                hours=0;mins=0;secs=0;out="";
 
                 amount = Math.floor(amount/1000);//kill the "milliseconds" so just secs
 
@@ -27,8 +27,8 @@ function GetCount(){
 
                 secs=Math.floor(amount);//seconds
 
-                if(days != 0 || hours != 0){out += hours +" hour"+((hours!=1)?"s":"")+", ";}
-                if(days != 0 || hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
+                if(hours != 0){out += hours +" hour"+((hours!=1)?"s":"")+", ";}
+                if(hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
                 out += secs +" seconds to dismissal";
 
                 chrome.browserAction.setBadgeText({text: hours+":"+mins});
