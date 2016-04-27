@@ -1,6 +1,7 @@
-dateNow = new Date()
+dateNow = new Date();
 dateFuture = new Date(2016,(dateNow.getMonth()),(dateNow.getDate()),15,28,40);
-delete dateNow
+delete dateNow;
+
 //function goFullscreen(){chrome.windows.update(WindowType, {type: 'app'})} –Expand popup to fullscreen if possible…
 function GetCount(){
 
@@ -18,9 +19,6 @@ function GetCount(){
 
                 amount = Math.floor(amount/1000);//kill the "milliseconds" so just secs
 
-                days=Math.floor(amount/86400);//days
-                amount=amount%86400;
-
                 hours=Math.floor(amount/3600);//hours
                 amount=amount%3600;
 
@@ -29,11 +27,10 @@ function GetCount(){
 
                 secs=Math.floor(amount);//seconds
 
-                if(days != 0){out += days +" day"+((days!=1)?"s":"")+", ";}
                 if(days != 0 || hours != 0){out += hours +" hour"+((hours!=1)?"s":"")+", ";}
                 if(days != 0 || hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
                 out += secs +" seconds to dismissal";
-                
+
                 chrome.browserAction.setBadgeText({text: hours+":"+mins});
         }
         return out; // The variable "out" should be set to whatever value you want to appear on the popup page.
@@ -44,11 +41,11 @@ function GetCount(){
 chrome.runtime.onStartup.addListener(function(){
     GetCount();
     setInterval(GetCount, 1000);
-})
+});
 
 // Make sure this script runs when the extension is first installed (or reloaded after updating the code)
 // https://developer.chrome.com/extensions/runtime#event-onInstalled
 chrome.runtime.onInstalled.addListener(function(details) { // Details is just a placeholder and can be ignored.
 	GetCount();
 	setInterval(GetCount, 1000);
-})
+});
