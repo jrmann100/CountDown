@@ -31,7 +31,7 @@ function GetCount(){
                 out += secs +" seconds to dismissal";
                 
                 if ((hours||mins||secs)<0){out="School's Out!";chrome.browserAction.setBadgeText({text: "0:0"});}
-                else{out = hours+":"+mins+":"+secs;
+                else{out = hours+":"+mins+":"+secs; //assuming the settings page is set to mini mode…
                 chrome.browserAction.setBadgeText({text: hours+":"+mins});}
         }
         return out; // The variable "out" should be set to whatever value you want to appear on the popup page.
