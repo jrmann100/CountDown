@@ -1,5 +1,8 @@
 dateNow = new Date();
-dateFuture = new Date((dateNow.getFullYear()),(dateNow.getMonth()),(dateNow.getDate()),15,28,40);
+var dateFuture = new Date()
+if ((dateNow.getDay()==1)||(dateNow.getDay()==2)||(dateNow.getDay()==4)||(dateNow.getDay()==5)){
+	dateFuture = new Date((dateNow.getFullYear()),(dateNow.getMonth()),(dateNow.getDate()),15,28,30)}
+	else if(dateNow.getDay()==3){dateFuture= new Date((dateNow.getFullYear()),(dateNow.getMonth()),(dateNow.getDate()),13,13,30)}
 delete dateNow;
 
 function GetCount(){
@@ -7,9 +10,9 @@ function GetCount(){
         dateNow = new Date();                                                                        //grab current date
         amount = dateFuture.getTime() - dateNow.getTime();                //calc milliseconds between dates
         delete dateNow;
-
+        if ((dateFuture.getDay()==0)||(dateFuture.getDay()==7)){out="It's the weekend!";chrome.browserAction.setBadgeText({text: "WKD"});}
         // time is already past
-        if(amount < 0){
+        else if(amount < 0){
                 out = "School's Out!";
         }
         // date is still good
