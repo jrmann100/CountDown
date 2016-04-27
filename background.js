@@ -10,7 +10,7 @@ function GetCount(){
         dateNow = new Date();                                                                        //grab current date
         amount = dateFuture.getTime() - dateNow.getTime();                //calc milliseconds between dates
         delete dateNow;
-        if ((dateFuture.getDay()==0)||(dateFuture.getDay()==7)){out="It's the weekend!";chrome.browserAction.setBadgeText({text: "WKD"});}
+        if ((dateFuture.getDay()==0)||(dateFuture.getDay()==7)){wkdTime = new Date; (out="It's the weekend!\n"+wkdTime.getHours()+":"+wkdTime.getMinutes()+":"+wkdTime.getSeconds());chrome.browserAction.setBadgeText({text: "WKD"});}
         // time is already past
         else if(amount < 0){
                 out = "School's Out!";
@@ -33,7 +33,7 @@ function GetCount(){
                 if(hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
                 out += secs +" seconds to dismissal";
                 
-                if ((hours||mins||secs)<0){out="School's Out!";chrome.browserAction.setBadgeText({text: "0:0"});}
+                if ((hours||mins||secs)<0){out="School's Out!";chrome.browserAction.setBadgeText({text: "0:0"});} //time is already past
                 else{out = hours+":"+mins+":"+secs; //assuming the settings page is set to mini mode…
                 chrome.browserAction.setBadgeText({text: hours+":"+mins});}
         }
