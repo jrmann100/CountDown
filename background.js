@@ -1,8 +1,7 @@
 dateNow = new Date();
-dateFuture = new Date(2016,(dateNow.getMonth()),(dateNow.getDate()),15,28,40);
+dateFuture = new Date((dateNow.getFullYear()),(dateNow.getMonth()),(dateNow.getDate()),15,28,40);
 delete dateNow;
 
-//function goFullscreen(){chrome.windows.update(WindowType, {type: 'app'})} –Expand popup to fullscreen if possible…
 function GetCount(){
 
         dateNow = new Date();                                                                        //grab current date
@@ -30,8 +29,10 @@ function GetCount(){
                 if(hours != 0){out += hours +" hour"+((hours!=1)?"s":"")+", ";}
                 if(hours != 0 || mins != 0){out += mins +" minute"+((mins!=1)?"s":"")+", ";}
                 out += secs +" seconds to dismissal";
-
-                chrome.browserAction.setBadgeText({text: hours+":"+mins});
+                
+                if ((hours||mins||secs)<0){out="School's Out!";chrome.browserAction.setBadgeText({text: "0:0"});}
+                else{out = hours+":"+mins+":"+secs;
+                chrome.browserAction.setBadgeText({text: hours+":"+mins});}
         }
         return out; // The variable "out" should be set to whatever value you want to appear on the popup page.
 }
